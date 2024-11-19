@@ -24,6 +24,16 @@
                                 </list>
                             </field>
                         </page>
+                        <page string="Callbacks">
+                            <field name="stk_callback_ids">
+                                <list string="Callbacks">
+                                    <field name="merchant_request_id"/>
+                                    <field name="checkout_request_id"/>
+                                    <field name="result_code"/>
+                                    <field name="result_desc"/>
+                                </list>
+                            </field>
+                        </page>
                     </notebook>
                 </sheet>
             </form>

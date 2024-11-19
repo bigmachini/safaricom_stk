@@ -15,8 +15,9 @@ class STKCallback(models.Model):
     mpesa_receipt_number = fields.Char(string='Mpesa Receipt Number')
     transaction_date = fields.Datetime(string='Transaction Date')
     phone_number = fields.Char(string='Phone Number')
-    stk_response_id = fields.Many2one('safaricom_stk.stk_response', string='STK Request')
+    stk_response_id = fields.Many2one('safaricom_stk.stk_response', string='STK Response')
     stk_request_id = fields.Many2one(related='stk_response_id.stk_request_id', string='STK Request')
+
 
     @api.model
     def create_from_json(self, data):

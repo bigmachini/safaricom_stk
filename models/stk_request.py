@@ -18,6 +18,7 @@ class STKRequest(models.Model):
     amount = fields.Float(string='Amount', readonly=True)
     till_id = fields.Many2one('safaricom_stk.till', string='Till', readonly=True)
     stk_response_ids = fields.One2many('safaricom_stk.stk_response', 'stk_request_id', string='STK Responses')
+    stk_callback_ids = fields.One2many('safaricom_stk.stk_callback', 'stk_request_id', string='STK Callbacks')
 
     def process_stk_push(self):
         passwd, timestamp = self.till_id.get_password()
