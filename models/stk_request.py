@@ -61,3 +61,5 @@ class STKRequest(models.Model):
                 "stk_request_id": self.id
             }
             self.env['safaricom_stk.stk_response'].create([vals])
+
+        return response.status_code
