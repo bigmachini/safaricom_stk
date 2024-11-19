@@ -17,10 +17,10 @@
                             <field name="partner_id"/>
                         </group>
                         <group string="API Credentials" name="api_credentials">
-                            <field name="consumer_key" widget="password"/>
-                            <field name="consumer_secret" widget="password"/>
-                            <field name="pass_key" widget="password"/>
-                            <field name="initiator_pass" widget="password"/>>
+                            <field name="consumer_key" password="True"/>
+                            <field name="consumer_secret" password="True"/>
+                            <field name="pass_key" password="True"/>
+                            <field name="initiator_pass" password="True"/>
                         </group>
                     </group>
                 </sheet>
