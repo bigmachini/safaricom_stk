@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_safaricom_stk_till,safaricom_stk.till,model_safaricom_stk_till,base.group_user,1,1,1,1
+access_safaricom_stk_stk_request,safaricom_stk.stk_request,model_safaricom_stk_stk_request,base.group_user,1,1,1,1
+access_safaricom_stk_stk_response,safaricom_stk.stk_response,model_safaricom_stk_stk_response,base.group_user,1,1,1,1
+access_safaricom_stk_stk_callback,safaricom_stk.stk_callback,model_safaricom_stk_stk_callback,base.group_user,1,1,1,1
+
