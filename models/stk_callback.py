@@ -1,3 +1,5 @@
+import logging
+
 from odoo import models, fields, api
 from datetime import datetime
 
@@ -20,6 +22,8 @@ class STKCallback(models.Model):
 
     @api.model
     def create_from_json(self, data):
+        logging.info(f"STKCallback::create_from_json  data: {data}")
+
         callback_data = data.get('Body', {}).get('stkCallback', {})
         callback_metadata = callback_data.get('CallbackMetadata', {}).get('Item', [])
 
@@ -32,6 +36,7 @@ class STKCallback(models.Model):
         stk_callback = self.env['safaricom_stk.stk_callback'].search(
             ['|', ('merchant_request_id', '=', merchant_request_id),
              ('checkout_request_id', '=', checkout_request_id)], limit=1)
+        logging.info(f"STKCallback::create_from_json  stk_callback: {stk_callback}")
         if not stk_callback:
             stk_response = self.env['safaricom_stk.stk_response'].search(
                 ['|', ('merchant_request_id', '=', merchant_request_id),

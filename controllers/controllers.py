@@ -30,7 +30,7 @@ class SafaricomStk(http.Controller):
         except Exception as ex:
             response = {
                 'status': False,
-                'message': 'Invalid MAC address format',
+                'message': f'Error processing request: {ex}',
                 'data': {}
             }
             return request.make_response(json.dumps(response), HEADERS, status=400)
