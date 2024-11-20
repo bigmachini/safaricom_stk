@@ -5,12 +5,17 @@
         <field name="model">safaricom_stk.stk_request</field>
         <field name="arch" type="xml">
             <form string="STK Request" create="false" edit="false">
+                <header>
+                    <field name="transaction_status" widget="statusbar" statusbar_visible="pending,failed,completed"/>
+                </header>
                 <sheet>
                     <group>
-                        <field name="name"/>
-                        <field name="phone_number"/>
-                        <field name="amount"/>
-                        <field name="till_id"/>
+                        <group string="Request Details" name="request_details">
+                            <field name="name"/>
+                            <field name="phone_number"/>
+                            <field name="amount"/>
+                            <field name="till_id"/>
+                        </group>
                     </group>
                     <notebook>
                         <page string="Responses">
@@ -50,6 +55,7 @@
                 <field name="phone_number"/>
                 <field name="amount"/>
                 <field name="till_id"/>
+                <field name="transaction_status"/>
             </list>
         </field>
     </record>

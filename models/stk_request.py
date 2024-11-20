@@ -8,6 +8,12 @@ from .config import stk_push_url, stk_push_call_back_url, mpesa_url_v1
 
 from odoo import models, fields, api
 
+TRANSACTION_STATUS = [
+    ('pending', 'PENDING'),
+    ('failed', 'FAILED'),
+    ('completed', 'COMPLETED'),
+]
+
 
 class STKRequest(models.Model):
     _name = 'safaricom_stk.stk_request'
@@ -19,6 +25,8 @@ class STKRequest(models.Model):
     till_id = fields.Many2one('safaricom_stk.till', string='Till', readonly=True)
     stk_response_ids = fields.One2many('safaricom_stk.stk_response', 'stk_request_id', string='STK Responses')
     stk_callback_ids = fields.One2many('safaricom_stk.stk_callback', 'stk_request_id', string='STK Callbacks')
+    transaction_status = fields.Selection(TRANSACTION_STATUS, string='Transaction Status', default='pending',
+                                          readonly=True)
 
     def process_stk_push(self):
         passwd, timestamp = self.till_id.get_password()
