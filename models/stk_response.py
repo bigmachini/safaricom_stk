@@ -5,6 +5,7 @@ class StkResponse(models.Model):
     _name = 'safaricom_stk.stk_response'
     _description = 'Safaricom STK Response'
 
+    name = fields.Char(related="checkout_request_id", readonly=True)
     merchant_request_id = fields.Char(string="Merchant Request ID", readonly=True)
     checkout_request_id = fields.Char(string="Checkout Request ID", readonly=True)
     response_code = fields.Char(string="Response Code", readonly=True)
