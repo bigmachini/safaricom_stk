@@ -52,7 +52,7 @@
     <!-- Menu Item -->
     <menuitem id="menu_safaricom_stk_root"
               name="Safaricom STK"
-              sequence="1"/>
+              sequence="20"/>
 
     <menuitem id="menu_safaricom_stk_main"
               name="Safaricom STK"
