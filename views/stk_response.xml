@@ -1,0 +1,51 @@
+<odoo>
+    <!-- Form View -->
+    <record id="view_stk_response_form" model="ir.ui.view">
+        <field name="name">stk.response.form</field>
+        <field name="model">safaricom_stk.stk_response</field>
+        <field name="arch" type="xml">
+            <form string="STK Response" create="false" edit="false">
+                <sheet>
+                    <group>
+                        <group string="Response Details" name="response_details">
+                            <field name="merchant_request_id"/>
+                            <field name="checkout_request_id"/>
+                            <field name="response_code"/>
+                            <field name="response_description"/>
+                            <field name="customer_message"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- List View -->
+    <record id="view_stk_response_list" model="ir.ui.view">
+        <field name="name">stk.response.list</field>
+        <field name="model">safaricom_stk.stk_response</field>
+        <field name="arch" type="xml">
+            <list string="STK Responses" create="false" edit="false" default_order="id desc">
+                <field name="merchant_request_id"/>
+                <field name="checkout_request_id"/>
+                <field name="response_code"/>
+                <field name="response_description"/>
+                <field name="customer_message"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_stk_response" model="ir.actions.act_window">
+        <field name="name">STK Responses</field>
+        <field name="res_model">safaricom_stk.stk_response</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Menu Item -->
+    <menuitem id="menu_stk_response"
+              name="Responses"
+              parent="menu_stk_request_top"
+              action="action_stk_response"
+              sequence="20"/>
+</odoo>

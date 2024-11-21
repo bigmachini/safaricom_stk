@@ -25,6 +25,8 @@ Long description of module's purpose
         'security/ir.model.access.csv',
         'views/tills.xml',
         'views/stk_request.xml',
+        'views/stk_response.xml',
+
     ],
     # only loaded in demonstration mode
     'demo': [
