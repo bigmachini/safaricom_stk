@@ -4,7 +4,7 @@
         <field name="name">stk.request.form</field>
         <field name="model">safaricom_stk.stk_request</field>
         <field name="arch" type="xml">
-            <form string="STK Request" create="false" edit="false">
+            <form string="STK Request" create="false">
                 <header>
                     <field name="transaction_status" widget="statusbar" statusbar_visible="pending,failed,completed"/>
                 </header>
