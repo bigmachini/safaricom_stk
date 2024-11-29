@@ -43,7 +43,6 @@ class STKCallback(models.Model):
                  ('checkout_request_id', '=', checkout_request_id)], limit=1)
 
             result_code = callback_data.get('ResultCode', None)
-            result_code = 0
             if result_code == 0:
                 stk_response.stk_request_id.transaction_status = 'completed'
             else:
